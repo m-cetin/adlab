@@ -15,7 +15,7 @@ You need 1 domain controller and exactly 2 clients. I used the following setup.
 Make sure the domain controller and both clients are running. On both clients, run the commands:
 
 ```
-Enable-PSSession -Force
+Enable-PSRemoting -Force
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value '*'
 Set-NetFirewallRule -Name 'WINRM-HTTP-In-TCP' -RemoteAddress Any
 Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False
