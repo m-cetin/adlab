@@ -88,7 +88,7 @@ if ($lang -like "*Deutsch*"){
     Write-Host "[+] Detected German as Windows language!" -ForegroundColor Green
     $lang_f = 0
 }
-if ($lang -contains "*English*" -or $lang -contains "*English (United States)*"){
+if ($lang -contains "*English*"){
     Write-Host "[+] Detected English as Windows language!" -ForegroundColor Green
     $lang_f = 1
 }
