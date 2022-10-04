@@ -23,7 +23,6 @@ $choices  = '&Yes', '&No'
 $UserAdmin = "Administrator"
 $Passwordz = ConvertTo-SecureString -String $domain_admin_pass -AsPlainText -Force
 $CredentialAdmin = [pscredential]::new($UserAdmin,$Passwordz)
-net user Administrator $domain_admin_pass
 
 function Connect-RDP {
     param (
@@ -120,6 +119,7 @@ else{
 Catch{Write-Host "error, something went wrong"; exit}
 
 Try{
+net user Administrator $domain_admin_pass
 Write-Host "This script will setup an Active Directory lab. Please make sure to snapshot your environment before you proceed."
 Write-Host "Please make sure both clients are running!" -ForegroundColor Yellow
 Write-Host "This is the backup password of the domain admin in case you need it:" -ForegroundColor Yellow
